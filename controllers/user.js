@@ -39,9 +39,11 @@ export const signup = async (req, res) => {
     const token = jwt.sign({ email, id: user._id }, SECRET_KEY, {
       noTimestamp: true,
     });
-    await createDefaultCategories(user._id);
+    console.log(user.name, user.email, user.password);
+    // await createDefaultCategories(user._id);
     res.status(200).json({ result: user, token });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Signup failed" });
   }
 };
