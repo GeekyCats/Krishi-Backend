@@ -1,9 +1,11 @@
 import express from "express";
+import axios from "axios";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import { PORT, MONGO_URI } from "./util/secret.js";
 import userRoutes from "./routes/user.js";
+import weatherRoutes from "./routes/weatherForecast.js";
 
 const app = express();
 
@@ -13,11 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.send("WELCOME TO KRISHI Backend!");
+  res.send("WELCOME TO KRISHI BACKEND!");
 });
 
 app.use("/account", userRoutes);
-
+app.use("/weather", weatherRoutes);
 mongoose
   .connect(MONGO_URI)
   .then(() => {
