@@ -1,12 +1,11 @@
 import express from "express";
-import axios from "axios";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
 import { PORT, MONGO_URI } from "./util/secret.js";
 import userRoutes from "./routes/user.js";
 import weatherRoutes from "./routes/weatherForecast.js";
-
+import newsRoutes from "./routes/news.js";
 const app = express();
 
 app.use(helmet());
@@ -20,6 +19,8 @@ app.get("/", (req, res) => {
 
 app.use("/account", userRoutes);
 app.use("/weather", weatherRoutes);
+app.use("/news", newsRoutes);
+
 mongoose
   .connect(MONGO_URI)
   .then(() => {
