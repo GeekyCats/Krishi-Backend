@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.send("WELCOME TO KRISHI!");
+  res.send("WELCOME TO KRISHI Backend!");
 });
 
 app.use("/account", userRoutes);
