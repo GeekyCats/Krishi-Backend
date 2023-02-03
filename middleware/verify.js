@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import { NextFunction } from "express";
 
-import { SECRET_KEY } from "../util/secret";
+import { SECRET_KEY } from "../util/secret.js";
 
 export const verify = (req, res, next) => {
   try {

@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { SECRET_KEY } from "../util/secret";
-import User from "../models/user";
+import { SECRET_KEY } from "../util/secret.js";
+import User from "../models/user.js";
 
 export const signin = async (req, res) => {
   const { email, password } = req.body;

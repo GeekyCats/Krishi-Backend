@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
-import { PORT, MONGO_URI } from "util/secrets.js";
+import { PORT, MONGO_URI } from "./util/secret.js";
+import userRoutes from "./routes/user.js";
 
 const app = express();
 
