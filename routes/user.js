@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/signin", signin);
 router.post("/signup", signup);
 router.get("/test", (req, res) => {
-  res.send("Hello from signup");
+  res.send("API is working");
 });
 
 export default router;

@@ -7,6 +7,7 @@ export const signin = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
+    // console.log(user);
     if (!user)
       return res
         .status(404)
@@ -39,8 +40,6 @@ export const signup = async (req, res) => {
     const token = jwt.sign({ email, id: user._id }, SECRET_KEY, {
       noTimestamp: true,
     });
-    console.log(user.name, user.email, user.password);
-    // await createDefaultCategories(user._id);
     res.status(200).json({ result: user, token });
   } catch (error) {
     console.log(error);
