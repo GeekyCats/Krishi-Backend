@@ -9,12 +9,12 @@ export const News = async (req, res) => {
     )
     .then((resp) => {
       //const { current, forecast } = resp.data
-      const { title, description, url, urlToImage } = resp.data.articles[0];
+      //const { title, description, url, urlToImage } = resp.data.articles[0];
       const arr = [{}];
       for (let i = 0; i < Math.min(resp.data.articles.length, 10); i++) {
         arr[i] = {
           title: resp.data.articles[i].title,
-          description: resp.data.articles[i].description,
+          //description: resp.data.articles[i].description,
           url: resp.data.articles[i].url,
           urlToImage: resp.data.articles[i].urlToImage,
         };
