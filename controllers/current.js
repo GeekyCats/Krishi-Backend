@@ -8,7 +8,15 @@ export const Current = async (req, res) => {
     )
     .then((resp) => {
       const { current } = resp.data;
-      res.send(current);
-      //console.log(resp.data);
+      const { temp_c, condition, humidity, precip_mm, last_updated } = current;
+      const currentWeatherData = {
+        temprature: temp_c,
+        condition: condition,
+        humidity: humidity,
+        precipitation: precip_mm,
+        time: last_updated,
+      };
+
+      res.send(currentWeatherData);
     });
 };
