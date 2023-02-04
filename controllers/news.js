@@ -12,11 +12,11 @@ export const News = async (req, res) => {
       //const { title, description, url, urlToImage } = resp.data.articles[0];
       const arr = [{}];
       for (let i = 3; i < Math.min(resp.data.articles.length, 20); i++) {
-        arr[i] = {
-          title: resp.data.articles[i - 2].title,
+        arr[i-2] = {
+          title: resp.data.articles[i ].title,
           //description: resp.data.articles[i].description,
-          url: resp.data.articles[i - 2].url,
-          urlToImage: resp.data.articles[i - 2].urlToImage,
+          url: resp.data.articles[i ].url,
+          urlToImage: resp.data.articles[i].urlToImage,
         };
       }
       res.send(arr);
