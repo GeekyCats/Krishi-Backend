@@ -1,11 +1,11 @@
 import axios from "axios";
-import { NEWS_API_KEY2 } from "../util/secret.js";
+import { NEWS_API_KEY } from "../util/secret.js";
 export const News = async (req, res) => {
   //var date = new Date();
   const query = "agriculture";
   axios
     .get(
-      `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${NEWS_API_KEY2}`
+      `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${NEWS_API_KEY}`
     )
     .then((resp) => {
       //const { current, forecast } = resp.data
