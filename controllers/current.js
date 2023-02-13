@@ -1,7 +1,7 @@
 import axios from "axios";
 import { WEATHER_API_KEY } from "../util/secret.js";
 export const Current = async (req, res) => {
-  const { lat, long } = req.body;
+  const { lat,long } = req.body;
   axios
     .get(
       `http://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${lat},${long}`
