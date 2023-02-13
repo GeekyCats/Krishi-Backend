@@ -14,7 +14,7 @@ export const News = async (req, res) => {
       for (let i = 3; i < Math.min(resp.data.articles.length, 20); i++) {
         arr.push({
           title: resp.data.articles[i].title,
-          //description: resp.data.articles[i].description,
+          description: resp.data.articles[i].description,
           url: resp.data.articles[i].url,
           urlToImage: resp.data.articles[i].urlToImage,
         });
